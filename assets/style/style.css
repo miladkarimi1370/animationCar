@@ -1,0 +1,277 @@
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../img/sky.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    >figure {
+
+        /* city // */
+        &:nth-of-type(1) {
+            >img {
+                position: absolute;
+                top: 40%;
+                left: 0%;
+                animation: city1 3s steps(3) 0s infinite;
+
+            }
+
+        }
+
+        &:nth-of-type(2) {
+
+            /* city 2 // */
+            >img {
+                position: absolute;
+                top: 40%;
+                left: 75%;
+                animation: city2 3s steps(3) 0s infinite;
+
+            }
+
+
+        }
+
+        &:nth-of-type(3) {
+
+            /* road // */
+            >img {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                animation: road 3s linear 0s infinite;
+            }
+
+
+        }
+
+        &:nth-of-type(4) {
+
+            /* car // */
+            >img {
+                position: absolute;
+                top: 70%;
+                left: 20%;
+                z-index: 10;
+                transform-origin: center;
+                transform: translate(-30%, -50%) scale(0.7) rotateZ(3deg);
+                animation: jumpCar 0.4s linear 1s infinite;
+            }
+
+            >i {
+                position: absolute;
+                z-index: 999;
+                display: flex;
+                color: tomato;
+
+                &:nth-of-type(1) {
+                    top: 57%;
+                    left: 30%;
+                    font-size: 50px;
+                    animation: noteMusic1 4s steps(3) 0s infinite forwards;
+                }
+
+                &:nth-of-type(2) {
+                    top: 57%;
+                    left: 30%;
+                    font-size: 50px;
+                    animation: noteMusic2 4s steps(3) 4s infinite;
+                }
+
+            }
+
+        }
+
+        &:nth-of-type(5) {
+
+            /* wheel 1 // */
+            >img {
+                position: absolute;
+                top: 78%;
+                left: 16%;
+                transform: translate(-30%, -50%) scale(0.5);
+                animation: wheel1 1s linear 0s infinite;
+            }
+
+        }
+
+        &:nth-of-type(6) {
+
+            /* wheel 2 // */
+            >img {
+                position: absolute;
+                top: 78%;
+                left: 39%;
+                transform: translate(-35%, -50%) scale(0.5);
+                animation: wheel2 1s linear 0s infinite;
+            }
+        }
+
+    }
+
+    .myPresent {
+
+        position: absolute;
+        right: 50px;
+        bottom: 100px;
+        background-color: rgba(255, 99, 71);
+        padding: 20px;
+        border-radius: 22% 78% 51% 49% / 79% 17% 83% 21%;
+        animation: fancyBorder 3s linear 0s infinite alternate;
+
+
+        >figure {
+
+            border-radius: 49% 51% 51% 49% / 33% 54% 46% 67%;
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            animation: fancyBorder2 3s ease 0s infinite alternate;
+
+
+            >img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+        }
+
+        >h2 {
+            color: whitesmoke;
+            font-size: 40px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            text-shadow: 0px 0 10px whitesmoke;
+        }
+
+        >p {
+            color: wheat;
+            font-size: 25px;
+            text-shadow: 10px 10px 20px whitesmoke;
+        }
+    }
+
+    >marquee {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 45px;
+        margin: 100px 0;
+        color: rgba(0, 0, 0, 0.644);
+
+    }
+}
+
+@keyframes wheel1 {
+    to {
+        transform: translate(-30%, -50%) scale(0.5) rotateZ(700deg);
+    }
+
+}
+
+@keyframes wheel2 {
+    to {
+        transform: translate(-35%, -50%) scale(0.5) rotateZ(700deg);
+    }
+}
+
+@keyframes road {
+    to {
+        left: -160%;
+    }
+}
+
+@keyframes city1 {
+    to {
+        left: -75%;
+    }
+}
+
+@keyframes city2 {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes jumpCar {
+    33% {
+
+        transform: translate(-30%, -50%) scale(0.7) rotateZ(3deg);
+    }
+
+    66% {
+
+        transform: translate(-30%, -50%) scale(0.7) rotateZ(0deg);
+    }
+}
+
+@keyframes noteMusic1 {
+    0% {
+        top: 50%;
+        left: 25%;
+        font-size: 45px;
+    }
+
+    40% {
+        top: 40%;
+        left: 20%;
+        font-size: 40px;
+    }
+
+    80% {
+        top: 30%;
+        left: 15%;
+        font-size: 30px;
+
+    }
+
+    80.0000001% {
+        top: 50%;
+        left: 25%;
+        font-size: 45px;
+    }
+}
+
+@keyframes noteMusic2 {
+    0% {
+        top: 30%;
+        left: 15%;
+        font-size: 30px;
+        opacity: 0;
+    }
+
+    40% {
+        top: 50%;
+        left: 25%;
+        font-size: 45px;
+        opacity: 1;
+    }
+
+    80% {
+        top: 40%;
+        left: 20%;
+        font-size: 40px;
+    }
+
+    80.0000001% {
+        top: 30%;
+        left: 15%;
+        font-size: 30px;
+    }
+
+}
+
+@keyframes fancyBorder {
+    to {
+        border-radius: 65% 35% 49% 51% / 49% 89% 11% 51%;
+    }
+}
+
+@keyframes fancyBorder2 {
+    to {
+        border-radius: 59% 41% 66% 34% / 43% 35% 65% 57%;
+    }
+}
